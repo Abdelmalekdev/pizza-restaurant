@@ -11,6 +11,7 @@
 
 :root{
     --primary-color:#eeebe4;
+    --primary-color-2:#1A1A1A;
     --secondary-color: #BB3E00;
     --accent-color: #5F8D37;
     --title-font: 'Alfa Slab One' , sans-serif;
@@ -73,7 +74,7 @@ nav{
 .nav-text{
     padding: 0 2em;
     border-radius: 20em;
-    backdrop-filter: blur(1em);
+    background-color: #eeebe4e0;
     box-shadow: 0 0 5px #0000004e;
 }
 
@@ -147,7 +148,6 @@ nav{
 
 .main .text a{
     display: inline-block;
-
     backdrop-filter: blur(1em);
     padding: 0.5em 1.8em;
     border-radius: 2em;
@@ -166,6 +166,12 @@ nav{
 /*main*/
 
 /*menu*/
+
+#menu{
+
+    background-image: radial-gradient(#1A1A1A 0.6px, transparent 0.6px); 
+    background-size: 10px 10px;
+}
 
 .menu{
     display: flex;
@@ -188,13 +194,28 @@ nav{
     flex-direction: column;
     text-align: center;
     width: 15em;
-    border-radius: 2em;
     margin: 1em;
+    backdrop-filter: blur(0.1em);
+    background-color: #ffffff77;
+    border-radius: 5em;
+    border-top-left-radius: 20em;
+    border-top-right-radius: 20em;
+    padding-bottom: 2em;
+    box-shadow: 0 0 5px #0000004e;
+    transition: 0.3s ease;
+}
+
+.info:hover{
+    background-color: #fff;
+    transform: translateY(-1em);
 }
 
 .info img{
     width: 100%;
     border-radius: 100%;
+    border-width: 0.2em;
+    border-color: #fff;
+    border-style: solid;
 }
 
 .info .text{
@@ -216,8 +237,8 @@ nav{
 }
 
 .info .text .name-price p{
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 1.3em;
+    font-weight: 600;
     color: var(--accent-color);
 }
 
@@ -239,7 +260,7 @@ nav{
 
 #about{
     position: relative;
-    background-color: #1A1A1A;
+    background-color: var(--primary-color-2);
 }
 
 .menu-wave-bottom{
@@ -297,7 +318,7 @@ nav{
 
 #why-us{
     position: relative;
-    background-image: radial-gradient(#1A1A1A 0.6px, transparent 0.6px); 
+    background-image: radial-gradient(var(--primary-color-2) 0.6px, transparent 0.6px); 
     background-size: 10px 10px;
     padding-bottom: 1em;
 }
@@ -335,7 +356,7 @@ nav{
     text-align: center;
     padding: 2em 3em;
     margin: 2em;
-    color: #1A1A1A;
+    color: var(--primary-color-2);
     width: 22em;
     height: 22em;
     border-radius: 100%;
@@ -382,7 +403,7 @@ nav{
 #gallery{
     position: relative;
     background: url(img/download.jpg) no-repeat;
-    background-color: #1A1A1A;
+    background-color: var(--primary-color-2);
     background-blend-mode: overlay;
     background-size: cover;
     padding-bottom: 2em;
@@ -423,5 +444,118 @@ nav{
 /*gallery*/
 
 /*contact*/
+.contact{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    max-width: 1300px;
+    padding: 0em 15em;
+    padding-bottom: 5em;
+    padding-top: 2em;
+}
 
+.contact .element , .contact form{
+    display: flex;
+    width: 30vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.contact form{
+    padding: 2em;
+}
+
+.contact form input , .contact form textarea{
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    transition: 0.2s ease;
+}
+
+.contact form input:hover , .contact form textarea:hover{
+    transform: scale(1.05);
+}
+
+.contact form input:focus , .contact form textarea:focus{
+    transform: scale(1.05);
+}
+
+.contact form textarea{
+    height: 8em;
+}
+
+.contact .elements h4{
+    font-size: 2em;
+    padding: 0.2em;
+    color: var(--primary-color-2);
+}
+
+.contact .elements p{
+    font-size: 1em;
+    margin: 0.5em;
+    color: var(--accent-color);
+}
+
+.contact form button{
+    align-self: flex-start;
+    padding: 0.5em 2em;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact form button:hover{
+    background-color: var(--secondary-color);
+}
+
+.contact .social a{
+    display: inline-block;
+    color: var(--accent-color);
+    margin: 0.2em;
+    font-size: 1.7em;
+    transition: 0.3s ease;
+}
+
+.contact .social a:hover{
+    color: var(--secondary-color);
+}
+
+/*contact*/
+
+/*footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-2);
+    width: 100%;
+    padding: 1em;
+    box-shadow: 0 0 5px #0000004e;
+}
+
+footer p{
+    color: var(--primary-color);
+}
+
+footer a{
+    color: var(--primary-color);
+    transition: 0.3s ease;
+}
+
+footer a:hover{
+    color: var(--accent-color);
+}
