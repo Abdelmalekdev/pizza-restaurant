@@ -44,7 +44,6 @@ section{
 }
 
 .title{
-
     color: var(--accent-color);
     padding: 0.5em;
     font-size: 3em;
@@ -76,6 +75,7 @@ nav{
     border-radius: 20em;
     background-color: #eeebe4e0;
     box-shadow: 0 0 5px #0000004e;
+    backdrop-filter: blur(0.2em);
 }
 
 .nav-text ul{
@@ -110,7 +110,7 @@ nav{
     height: 100vh;
     width: 100vw;
     background: url(img/home.jpg) no-repeat;
-    background-color: #1a1a1a7b;
+    background-color: #1a1a1ab8;
     background-blend-mode: overlay;
     background-size: cover;
 }
@@ -179,6 +179,7 @@ nav{
     align-items: center;
     flex-direction: column;
     max-width: 1300px;
+    padding-bottom: 5em;
 }
 
 .food{
@@ -208,6 +209,10 @@ nav{
 .info:hover{
     background-color: #fff;
     transform: translateY(-1em);
+}
+
+.info:hover .text .name-price p{
+    color: var(--secondary-color);
 }
 
 .info img{
@@ -240,6 +245,7 @@ nav{
     font-size: 1.3em;
     font-weight: 600;
     color: var(--accent-color);
+    transition: 0.3s ease;
 }
 
 .info .text .description{
@@ -260,7 +266,11 @@ nav{
 
 #about{
     position: relative;
+    background: url(img/magasin.png) no-repeat;
     background-color: var(--primary-color-2);
+    background-blend-mode: overlay;
+    background-size: cover;
+    padding-bottom: 2em;
 }
 
 .menu-wave-bottom{
@@ -279,7 +289,7 @@ nav{
     flex-wrap: nowrap;
     text-align: center;
     max-width: 1300px;
-    padding:  2em 2em;
+    padding-bottom: 5em;
 }
 
 .about div{
@@ -335,8 +345,10 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     max-width: 1300px;
+    padding-bottom: 3em;
 }
 
 .pros{
@@ -446,19 +458,19 @@ nav{
 /*contact*/
 .contact{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     align-items: center;
     flex-direction: row;
     max-width: 1300px;
-    padding: 0em 15em;
+    padding: 0em 1em;
     padding-bottom: 5em;
     padding-top: 2em;
 }
 
 .contact .element , .contact form{
     display: flex;
-    width: 30vw;
+    width: 50vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -466,6 +478,7 @@ nav{
 
 .contact form{
     padding: 2em;
+    
 }
 
 .contact form input , .contact form textarea{
@@ -491,8 +504,10 @@ nav{
     height: 8em;
 }
 
-.contact .elements h4{
+.contact .elements h4 , .contact form h4{
+    align-self: flex-start;
     font-size: 2em;
+    font-weight: 500;
     padding: 0.2em;
     color: var(--primary-color-2);
 }
@@ -558,4 +573,141 @@ footer a{
 
 footer a:hover{
     color: var(--accent-color);
+}
+
+svg{
+    opacity: 0;
+}
+
+/*footer*/
+
+/*media queries*/
+@media screen and (max-width: 768px){
+    .nav-text{
+        font-size: 0.6em;
+    }
+    .about{
+        flex-direction: column;
+    }
+
+    .contact{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 2em;
+    }
+
+    .contact .element , .contact form{
+        width: 80vw;
+        margin: 1em 0;
+    }
+
+    .contact form{
+        padding: 1em;
+    }
+
+    .main .text h2{
+        font-size: 2.5em;
+    }
+
+    .main .text p{
+        font-size: 1.2em;
+    }
+
+    .main .text a{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .title{
+        font-size: 2em;
+    }
+
+    .nav-text a{
+        margin: 0.5em;
+        font-size: 1.2em;
+    }
+
+    .about div{
+    margin: 1.5em 1em;
+    }
+
+    .about .text p{
+        font-size: 1em;
+    }
+
+    .about img{
+        width: 14em;
+    }
+
+    .about img{
+        width: 15em;
+        border-width: 0.5em;
+    }
+
+    .pros-card{
+        width: 18em;
+        height: 18em;
+        padding: 1.5em 2em;
+    }
+
+    .pros-card i{
+        font-size: 4em;
+    }
+
+    footer{
+        font-size: 0.7em;
+    }
+    
+}
+
+@media  screen and  (max-width: 370px){
+
+    .title{
+        font-size: 1.5em;
+    }
+
+    .main .text p{
+        font-size: 1em;
+        margin: 0.5em 0;
+    }
+
+    .nav-text a{
+        margin: 0.4em;
+        font-size: 1em;
+    }
+
+    .about .text p{
+        font-size: 0.8em;
+    }
+
+    .info{
+        width: 12em;
+    }
+
+    .info .text .name-price h4 , .info .text .name-price p{
+        font-size: 1em;
+    }
+
+    .info .text .name-price p{
+        font-size: 1.1em;
+    }
+
+    .info .text .description{
+        font-size: 0.8em;
+    }
+
+    .pros-card{
+        width: 20em;
+        height: 20em;
+        padding: 1.5em 2em;
+        font-size: 0.6em;
+    }
+
+    .pros-card i{
+        font-size: 4em;
+    }
+
+    
 }
